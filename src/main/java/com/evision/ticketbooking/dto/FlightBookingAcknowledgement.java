@@ -12,6 +12,5 @@ import lombok.*;
 public class FlightBookingAcknowledgement {
     private String status;
     private double totalFare;
-//    private String pnr;
     private PassengerInfo passengerInfo;
 }

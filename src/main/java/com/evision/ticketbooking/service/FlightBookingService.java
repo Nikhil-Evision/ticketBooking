@@ -7,6 +7,7 @@ import com.evision.ticketbooking.model.PaymentInfo;
 import com.evision.ticketbooking.repo.PassengerInfoRepository;
 import com.evision.ticketbooking.repo.PaymentInfoRepository;
 import com.evision.ticketbooking.utils.PaymentUtils;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,14 @@ public class FlightBookingService {
     @Autowired
     private PaymentInfoRepository paymentInfoRepository;
 
+    @Transactional
     public FlightBookingAcknowledgement bookFlightTicket(FlightBookingRequest request){
         FlightBookingAcknowledgement flightBookingAcknowledgement = null;
         PassengerInfo passengerInfo = request.getPassengerInfo();
         passengerInfo = passengerInfoRepository.save(passengerInfo);
+
         PaymentInfo paymentInfo = request.getPaymentInfo();
-//        paymentInfo = paymentInfoRepository.save(paymentInfo);
+
         PaymentUtils.validateCreditLimit(paymentInfo.getAccountNo(),passengerInfo.getFare());
 
         passengerInfo.setId(paymentInfo.getPassengerId());

@@ -12,6 +12,4 @@ import lombok.*;
 public class FlightBookingRequest {
     private PassengerInfo passengerInfo;
     private PaymentInfo paymentInfo;
-
-
 }
