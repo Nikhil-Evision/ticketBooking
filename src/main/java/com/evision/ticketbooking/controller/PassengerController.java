@@ -1,4 +1,5 @@
 package com.evision.ticketbooking.controller;
+
 import com.evision.ticketbooking.dto.FlightBookingAcknowledgement;
 import com.evision.ticketbooking.dto.FlightBookingRequest;
 import com.evision.ticketbooking.model.PassengerInfo;
@@ -15,7 +16,7 @@ public class PassengerController {
 
     @GetMapping
     public String homepage(){
-        return "Connected Successfully..........";
+        return "Connected Successfully test..........";
     }
     @PostMapping("/bookFlightTicket")
     public FlightBookingAcknowledgement bookFlightTicket(@RequestBody FlightBookingRequest request){
@@ -29,112 +30,6 @@ public class PassengerController {
     public List<PaymentInfo> getAllInfo(){
         return service.gelAllInfo();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
